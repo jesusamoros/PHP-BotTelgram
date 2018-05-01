@@ -67,6 +67,8 @@ function readSmS()
                 $id      =  $response["result"][$i]["update_id"];
                 //Guardamos el último id de mensaje
                 $smsid   =  $response["result"][$i]["message"]["message_id"];
+
+                // Hay usuarios que tienen configurado el username si no lo tienen configurado obtenemos el first_name
                 if (empty($response["result"][$i]["message"]["from"]["username"])){
                     $user    =  $response["result"][$i]["message"]["from"]["first_name"];
                 }else{
