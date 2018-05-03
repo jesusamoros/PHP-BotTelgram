@@ -55,7 +55,7 @@ function readSmS()
     $id_archivo = fgets($fp);
     //echo "Valor del fichero ".$id_archivo;
     fclose($fp);
-     $url="https://api.telegram.org/bot204843205:AAEwfw0j0clyQOk41Z-NClx9D6n6CfVgXGM/getUpdates";
+     $url="https://api.telegram.org/botXXXXXX:APIKEY/getUpdates";
     $curl = curl_init("$url"); //PENDIENTE 
     curl_setopt($curl, CURLOPT_FAILONERROR, true); 
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true); 
