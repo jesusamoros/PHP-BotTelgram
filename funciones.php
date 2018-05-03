@@ -1,9 +1,14 @@
 <?php
 
-//NOT COMPLETE , NOT WORK
+// convert kelvin to cent
+function kel2cent ($kelvin){
+    $cent = $kelvin - 273.15;
+    return $cent;
+
+}
+
+
 function tiempo(){
-
-
 //http://api.openweathermap.org/data/2.5/weather?q=ELCHE,ES&appid=bb7d1605ff04a95c9eac0d718e0632ba
 	$cho  = curl_init();
 	curl_setopt($cho, CURLOPT_URL,"http://api.openweathermap.org/data/2.5/weather?q=ELCHE,ES&appid=VUESTRAAPIKEY");
