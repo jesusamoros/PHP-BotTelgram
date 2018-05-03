@@ -1,22 +1,26 @@
 <?php
 
 //NOT COMPLETE , NOT WORK
-function tiempo()
-{
-//Esta funcion es para obtener el tiempo en una ubicacion, servicio gratuito de openweathermap
-    //http://api.openweathermap.org/data/2.5/weather?q=ELCHE,ES&appid=xxxxxxxxxxxxxxxxxxxxxxxxx
-        $cho  = curl_init();
-        $site="ELCHE,ES";
-        $api="your_Api";
-        curl_setopt($cho, CURLOPT_URL,"http://http://api.openweathermap.org/data/2.5/weather?q=$site&appid=$api");
-        curl_setopt($cho, CURLOPT_POST, TRUE);
-        curl_setopt($cho, CURLOPT_RETURNTRANSFER, true);
-        $output = curl_exec ($cho); 
-        curl_close ($cho);
-        $resp =json_decode($output,true);
-        var_dump($resp);
-        // Pendiente de terminar la respuesta....
+function tiempo(){
+
+
+//http://api.openweathermap.org/data/2.5/weather?q=ELCHE,ES&appid=bb7d1605ff04a95c9eac0d718e0632ba
+	$cho  = curl_init();
+	curl_setopt($cho, CURLOPT_URL,"http://api.openweathermap.org/data/2.5/weather?q=ELCHE,ES&appid=VUESTRAAPIKEY");
+	curl_setopt($cho, CURLOPT_RETURNTRANSFER, true);
+	$output = curl_exec ($cho); 
+	curl_close ($cho);
+    $resp =json_decode($output,true);
     
+    $lugar         =  $resp['name'];
+    $tiempo        =  $resp['weather'][0]['main'];
+    $tiempo_desc   =  $resp['weather'][0]['description'];
+    $temp          =  kel2cent($resp['main']['temp']);
+    $temp_max      =  kel2cent($resp['main']['temp_max']);
+	$temp_min      =  kel2cent($resp['main']['temp_min']);
+	
+    $r=  " hoy el dia en $lugar esta   $tiempo $tiempo_desc y tenemos una temperatura de $temp º , la maxima prevista para hoy sera de $temp_max º y la minima de $temp_min º";  
+    return $r;
 }
     
 function sendMessage($text) 
