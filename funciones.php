@@ -89,7 +89,15 @@ function readSmS()
                 $datos_sms = array('id' => $id ,'smsid' => $smsid,'usuario' => $user,'grupo' => $grupo, 'comando' => $comando);
     
                 $lista_opciones = "";//envio de datos o opciones
-                $sendSmS = "Hola @".$user." en que te puedo ayudar?? , estos son los comandos $lista_opciones "; 
+		    
+		if($comando == "/tiempo"){ // con el comando tiempo enviamos el texto del tiempo
+			$sendSmS = "Hola @".$user."\n";
+			$sendSmS .=	tiempo();    
+		}else{  // con cualquier otro comando enviamos la ayuda por defecto
+			 $sendSmS = "Hola @".$user." en que te puedo ayudar?? , estos son los comandos $lista_opciones ";
+		}
+		    
+                
                 sendMessage("$sendSmS");// llamamos a la funcion y contestamos automaticamente a cualquier comando, automatic reponse  when recibed comand /example
                 $fp = fopen('last_id.txt', 'w');// Guardamos el último id al que hemos contestado, last id reply sms.
                 fwrite($fp, "$id");
