@@ -155,6 +155,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTQwMzk3NDcsLTE4NTQ1NTA0NDZdfQ
-==
+eyJoaXN0b3J5IjpbLTE5MTQwMzk3NDddfQ==
 -->
