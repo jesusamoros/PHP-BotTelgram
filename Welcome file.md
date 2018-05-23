@@ -3,7 +3,9 @@
  1. List item
  2.  item 
  3. item
- - [ ] L
+ - [ ] facil
+ - [ ] rapido
+ - [ ] barato
 
 Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. If you have finished with me, you can just create new files by opening the **file explorer** on the left corner of the navigation bar.
 
@@ -153,5 +155,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5MzcwNDg3MiwtMTg1NDU1MDQ0Nl19
+eyJoaXN0b3J5IjpbLTE5MTQwMzk3NDcsLTE4NTQ1NTA0NDZdfQ
+==
 -->
